@@ -8,6 +8,7 @@ class AppTheme {
     fontFamily: regular,
     appBarTheme: AppBarTheme(
       backgroundColor: white,
+      elevation: 0,
       iconTheme: IconThemeData(
         color: black,
       ),

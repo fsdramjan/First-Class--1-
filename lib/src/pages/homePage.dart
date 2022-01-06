@@ -4,7 +4,6 @@ import 'package:api_test/src/configs/appColors.dart';
 import 'package:api_test/src/configs/appConfigs.dart';
 import 'package:api_test/src/widgets/kText.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   @override
