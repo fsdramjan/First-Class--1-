@@ -19,7 +19,7 @@ class SingleNewsPage extends StatelessWidget with BaseController {
     return Scaffold(
       appBar: AppBar(
         title: KText(
-          text: news.title,
+          text: news.title.toString(),
         ),
         actions: [
           IconButton(
@@ -40,7 +40,7 @@ class SingleNewsPage extends StatelessWidget with BaseController {
         child: Column(
           children: [
             CachedNetworkImage(
-              imageUrl: news.urlToImage,
+              imageUrl: news.urlToImage.toString(),
               fit: BoxFit.fill,
               progressIndicatorBuilder: (context, url, downloadProgress) =>
                   Center(
@@ -57,7 +57,7 @@ class SingleNewsPage extends StatelessWidget with BaseController {
               child: Column(
                 children: [
                   KText(
-                    text: news.title,
+                    text: news.title.toString(),
                     fontSize: 16,
                     fontFamily: medium,
                   ),
@@ -72,7 +72,7 @@ class SingleNewsPage extends StatelessWidget with BaseController {
                       ),
                       SizedBox(width: 10),
                       KText(
-                        text: news.author,
+                        text: news.author.toString(),
                         fontFamily: medium,
                       ),
                       SizedBox(width: 10),
@@ -107,21 +107,21 @@ class SingleNewsPage extends StatelessWidget with BaseController {
                       ),
                       SizedBox(width: 10),
                       KText(
-                        text: news.publishedAt,
+                        text: news.publishedAt.toString(),
                         fontFamily: medium,
                       ),
                     ],
                   ),
                   Divider(),
                   KText(
-                    text: news.description,
+                    text: news.description.toString(),
                     fontFamily: medium,
                     fontSize: 12,
                     color: black54,
                   ),
                   Divider(),
                   KText(
-                    text: news.content,
+                    text: news.content.toString(),
                     fontFamily: medium,
                     fontSize: 12,
                     color: black54,
@@ -131,8 +131,8 @@ class SingleNewsPage extends StatelessWidget with BaseController {
                   InkWell(
                     onTap: () => Get.to(
                       WebViewExample(
-                        url: news.url,
-                        title: news.title,
+                        url: news.url.toString(),
+                        title: news.title.toString(),
                       ),
                     ),
                     child: Container(
@@ -169,10 +169,10 @@ class SingleNewsPage extends StatelessWidget with BaseController {
                     child: ListView.builder(
                         shrinkWrap: true,
                         primary: false,
-                        itemCount: articleNewsC.allNewsData.length,
+                        itemCount: newsDataC.article.length,
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (BuildContext context, int index) {
-                          final item = articleNewsC.allNewsData[index];
+                          final item = newsDataC.article[index];
 
                           return GestureDetector(
                             onTap: () => Get.to(
@@ -204,7 +204,7 @@ class SingleNewsPage extends StatelessWidget with BaseController {
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(10),
                                         child: CachedNetworkImage(
-                                          imageUrl: item.urlToImage,
+                                          imageUrl: item.urlToImage.toString(),
                                           fit: BoxFit.fill,
                                           progressIndicatorBuilder: (context,
                                                   url, downloadProgress) =>

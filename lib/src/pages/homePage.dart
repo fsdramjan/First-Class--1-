@@ -2,12 +2,15 @@ import 'package:api_test/src/components/allNewsComponents.dart';
 import 'package:api_test/src/components/catagoryComponets.dart';
 import 'package:api_test/src/configs/appColors.dart';
 import 'package:api_test/src/configs/appConfigs.dart';
+import 'package:api_test/src/controllers/baseController.dart';
 import 'package:api_test/src/widgets/kText.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatelessWidget with BaseController {
   @override
   Widget build(BuildContext context) {
+    // newsDataC.getNewsData();
+    newsDataC.getNews();
     return Scaffold(
       drawer: Drawer(),
       appBar: AppBar(
